@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://activemq.apache.org/schema/core"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://activemq.apache.org/schema/core http://activemq.apache.org/schema/core/activemq-core.xsd
+http://activemq.apache.org/schema/core ">
+
+    <transportConnectors>
+        <transportConnector name="openWire" uri="tcp://localhost:61616" discoveryUri="multicast://default"/>
+        <transportConnector name="ssl" uri="ssl://localhost:61617"/>
+        <transportConnector name="stomp" uri="stomp://localhost:61613"/>
+        <transportConnector name="ws" uri="ws://localhost:61614/"/>
+    </transportConnectors>
+
+
+    <networkConnectors>
+        <networkConnector uri="static:(tcp://192.168.11.23:61617)"/>
+    </networkConnectors>
+</beans>
